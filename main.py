@@ -45,79 +45,8 @@ app.add_middleware(
 
 @app.get("/")
 def index():
-    return {{
-    "description": "Forest Watch AI API for monitoring forest fire and flood alerts.",
-    "functionality": {
-        "endpoints": [
-            {
-                "path": "/alert/fire/{firesensordata}",
-                "method": "POST",
-                "description": "Sends an urgent fire alert email to the Forest Watch Team based on the provided fire sensor data.",
-                "function": "alert_fire"
-            },
-            {
-                "path": "/alert/flood/{floodsensordata}",
-                "method": "POST",
-                "description": "Sends an urgent flood alert email to the Forest Watch Team based on the provided flood sensor data.",
-                "function": "alert_flood"
-            },
-            {
-                "path": "/insert_into_forest_fire_data/",
-                "method": "POST",
-                "description": "Inserts forest fire sensor data into the MongoDB collection.",
-                "function": "insert_into_forest_fire_data"
-            },
-            {
-                "path": "/insert_into_forest_flood_data/",
-                "method": "POST",
-                "description": "Inserts forest flood sensor data into the MongoDB collection.",
-                "function": "insert_into_forest_flood_data"
-            },
-            {
-                "path": "/firedetector",
-                "method": "POST",
-                "description": "Detects forest fire based on fire sensor data, inserts data into MongoDB, and triggers alerts if necessary.",
-                "function": "firedetector"
-            },
-            {
-                "path": "/flooddetector",
-                "method": "POST",
-                "description": "Detects forest flood based on flood sensor data, inserts data into MongoDB, and triggers alerts if necessary.",
-                "function": "flooddetector"
-            }
-        ],
-        "other_endpoints": [
-            {
-                "path": "/",
-                "method": "GET",
-                "description": "Root endpoint for the API."
-            }
-        ],
-        "middleware": [
-            {
-                "name": "CORS Middleware",
-                "description": "Enables Cross-Origin Resource Sharing (CORS) to allow requests from any origin."
-            }
-        ],
-        "data_storage": {
-            "mongo_db": {
-                "uri": "mongodb+srv://forestwatchai:****@forestwatchai.kshtlwm.mongodb.net/",
-                "collections": [
-                    {
-                        "name": "forest_fire_data",
-                        "description": "Collection for storing forest fire sensor data."
-                    },
-                    {
-                        "name": "forest_flood_data",
-                        "description": "Collection for storing forest flood sensor data."
-                    }
-                ]
-            }
-        }
-    }
-}
-
-
+    return {
+    "status":"running successfully"
     }
 
 
