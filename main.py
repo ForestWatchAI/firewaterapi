@@ -114,9 +114,9 @@ def insert_into_forest_flood_data(floodsensordata):
 
 @app.post("/firedetector")
 def firedetector(firesensordata: FireSensorData):
+    insert_into_forest_fire_data(firesensordata.firesensordata)
     if firesensordata.firesensordata > 100:
         alert_fire(firesensordata.firesensordata)
-        insert_into_forest_fire_data(firesensordata.firesensordata)
         return f'Forest Fire Alert'
     else:
         return f'Temperature is normal. No fire alerts'
@@ -124,9 +124,9 @@ def firedetector(firesensordata: FireSensorData):
 
 @app.post("/flooddetector")
 def flooddetector(floodsensordata: FloodSensorData):
+    insert_into_forest_flood_data(floodsensordata.floodsensordata)
     if floodsensordata.floodsensordata > 50:
         alert_flood(floodsensordata.floodsensordata)
-        insert_into_forest_flood_data(floodsensordata.floodsensordata)
         return f'Forest Flood Alert'
     else:
         return f'Water level is normal. No flood alerts'
