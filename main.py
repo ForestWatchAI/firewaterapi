@@ -107,7 +107,7 @@ def insert_into_forest_fire_data(firesensordata):
 @app.post("/insert_into_forest_flood_data/", response_model=dict)
 def insert_into_forest_flood_data(floodsensordata):
     inserted_data = collection2.insert_one(
-        jsonable_encoder({"waterlevel": floodsensordata,
+        jsonable_encoder({"Temperature": floodsensordata,
                           "capturetime": currenttime.strftime("%H:%M:%S , %Y-%m-%d"),
                           "capturelocation": capturelocation}))
 
